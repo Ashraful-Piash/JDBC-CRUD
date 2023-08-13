@@ -58,10 +58,10 @@ public class Student {
             String query ="INSERT into student (sid, sname, semail) VALUES(?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1,11);
-            preparedStatement.setString(2,"jerin");
-            preparedStatement.setString(3,"jerinpiash@gmail.com");
+            preparedStatement.setString(2,"piash");
+            preparedStatement.setString(3,"piash@gmail.com");
             preparedStatement.execute();
-            System.out.println("established");
+            System.out.println("created data");
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +92,7 @@ public class Student {
                 System.out.println("email: "+resultSet.getString(3));
 
             }
-            System.out.println("established");
+            System.out.println("Got the data");
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -109,12 +109,14 @@ public class Student {
 
             Connection con = DriverManager.getConnection(url+db, userName, passWord);
 //            Statement statement = con.createStatement();
-            String query ="UPDATE student set sid = ? where sname = ?";
+            String query = "UPDATE student SET sid = ? WHERE sname = ?";
             PreparedStatement preparedStatement = con.prepareStatement(query);
+
             preparedStatement.setInt(1,12);
-            preparedStatement.setString(2,"jerin");
-            preparedStatement.execute();
-            System.out.println("established");
+            preparedStatement.setString(2,"piash");
+
+            preparedStatement.executeUpdate();
+            System.out.println("updated");
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -135,7 +137,7 @@ public class Student {
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1,12);
             preparedStatement.executeUpdate();
-            System.out.println("established");
+            System.out.println("Deleted");
             con.close();
         } catch (Exception e) {
             e.printStackTrace();

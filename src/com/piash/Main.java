@@ -13,7 +13,7 @@ public class Main {
 //        student.createData();
 //        student.readData();
 //        student.updateData();
-        student.deleteData();
+//        student.deleteData();
 
     }
 }
